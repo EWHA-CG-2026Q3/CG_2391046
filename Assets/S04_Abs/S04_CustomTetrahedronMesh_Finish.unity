@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 1666173451}
   - component: {fileID: 1666173450}
   - component: {fileID: 1666173449}
-  - component: {fileID: 1666173448}
+  - component: {fileID: 1666173452}
   m_Layer: 0
   m_Name: CustomTetrahedronMesh_Finish
   m_TagString: Untagged
@@ -275,18 +275,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1666173448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1666173447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01304ec133602704c8cd4940c79d1be3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::S04_CustomTetrahedronMesh
 --- !u!23 &1666173449
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -312,7 +300,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -359,6 +347,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1666173452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666173447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044b061ff02cf7a4a8a89858693d059e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::S04_CustomPyramidMesh
 --- !u!1 &1875535261
 GameObject:
   m_ObjectHideFlags: 0
