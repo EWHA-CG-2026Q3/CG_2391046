@@ -48,10 +48,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.23f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\S04_Mesh3D\S04_CustomDiamondMesh.cs" />
-    <Compile Include="Assets\S04_Mesh3D\S04_CustomTetrahedronMesh_Finish.cs" />
-    <Compile Include="Assets\S04_Mesh3D\S04_NormalVisualizer.cs" />
-    <Compile Include="Assets\S04_Mesh3D\S04_CustomCubeMesh.cs" />
+    <Compile Include="Assets\S04_Abs\S04_CustomTetrahedronMesh_Finish.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\S02\S02_CoordinateWarmup.cs" />
     <Compile Include="Assets\S03\S03_CustomPolygonMesh_Square.cs" />
