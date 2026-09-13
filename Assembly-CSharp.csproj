@@ -53,6 +53,7 @@
     <Compile Include="Assets\S02\S02_CoordinateWarmup.cs" />
     <Compile Include="Assets\S03\S03_CustomPolygonMesh_Square.cs" />
     <Compile Include="Assets\S03\S03_SingleTriangleMesh_Finish.cs" />
+    <Compile Include="Assets\S04_Abs\S04_CustomPyramidMesh.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
