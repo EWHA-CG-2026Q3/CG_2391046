@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\S04_Abs\S04_CustomTetrahedronMesh_Finish.cs" />
+    <Compile Include="Assets\S05\S05_MyMeshRenderer.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\S02\S02_CoordinateWarmup.cs" />
     <Compile Include="Assets\S03\S03_CustomPolygonMesh_Square.cs" />
