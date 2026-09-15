@@ -25,11 +25,11 @@ public class S05_MyMeshRenderer : MonoBehaviour
         // 2. 픽셀 경계를 흐리지 않게
         canvasTexture.filterMode = FilterMode.Point;
 
-        // 3. 픽셀 채우기 (실습 진행 순서에 맞게 슬래시(//) 주석 위치를 바꿔주세요)
+        // 3. 픽셀 채우기 (체스판 무늬 활성화)
         // FillBackground(backgroundColor);
         // FillRandom(); 
-        FillVerticalStripes(patternSize, colorA, colorB); // 실습① (2차 커밋용)
-        // FillCheckerboard(patternSize, colorA, colorB); // 실습② (3차 커밋용)
+        // FillVerticalStripes(patternSize, colorA, colorB); // 실습① (2차 커밋 완료)
+        FillCheckerboard(patternSize, colorA, colorB);       // 실습② (3차 커밋용)
 
         // 4. 변경 사항 반영
         canvasTexture.Apply();
