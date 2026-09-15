@@ -1,10 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// S05_MeshRenderer
-// FillBackground, FillRandom은 참고용으로 이미 완성되어 있습니다.
-// 이 패턴을 참고해서 FillVerticalStripes, FillCheckerboard를 완성하세요.
-
 public class S05_MyMeshRenderer : MonoBehaviour
 {
     [SerializeField] private int canvasWidth = 256;
@@ -29,11 +25,11 @@ public class S05_MyMeshRenderer : MonoBehaviour
         // 2. 픽셀 경계를 흐리지 않게
         canvasTexture.filterMode = FilterMode.Point;
 
-        // 3. 픽셀 채우기 (실습①. 완료 후 아래 줄로 교체해 체스판도 확인해보세요.)
-        FillBackground(backgroundColor);
+        // 3. 픽셀 채우기 (실습 진행 순서에 맞게 슬래시(//) 주석 위치를 바꿔주세요)
+        // FillBackground(backgroundColor);
         // FillRandom(); 
-        // FillVerticalStripes(patternSize, colorA, colorB); // 실습①
-        // FillCheckerboard(patternSize, colorA, colorB); // 실습②
+        FillVerticalStripes(patternSize, colorA, colorB); // 실습① (2차 커밋용)
+        // FillCheckerboard(patternSize, colorA, colorB); // 실습② (3차 커밋용)
 
         // 4. 변경 사항 반영
         canvasTexture.Apply();
@@ -42,7 +38,6 @@ public class S05_MyMeshRenderer : MonoBehaviour
         targetImage.texture = canvasTexture;
     }
 
-    // 참고 예시 ① — 캔버스 전체를 한 가지 색으로 채움 (모든 픽셀이 같은 값, 이미 완성됨)
     private void FillBackground(Color color)
     {
         for (int x = 0; x < canvasWidth; x++)
@@ -54,7 +49,6 @@ public class S05_MyMeshRenderer : MonoBehaviour
         }
     }
 
-    // 참고 예시 ② — 각 픽셀을 독립적으로 무작위 색으로 채움 (이미 완성됨)
     private void FillRandom()
     {
         for (int x = 0; x < canvasWidth; x++)
@@ -67,15 +61,13 @@ public class S05_MyMeshRenderer : MonoBehaviour
         }
     }
 
-    // 실습① — 세로 줄무늬. 반복문 구조는 주어져 있습니다. 조건식 한 줄만 채우세요.
+    // 실습① — 세로 줄무늬
     private void FillVerticalStripes(int width, Color colorA, Color colorB)
     {
         for (int x = 0; x < canvasWidth; x++)
         {
-            // TODO: x를 width로 나눈 몫이 짝수면 colorA, 홀수면 colorB가 되도록
-            // isColorA를 올바른 조건식으로 바꾸세요.
-            // 힌트: (x / width) % 2 == 0
-            bool isColorA = true; // ← 이 줄을 수정하세요
+            // x를 width로 나눈 몫이 짝수면 colorA, 홀수면 colorB
+            bool isColorA = (x / width) % 2 == 0;
 
             Color stripeColor = isColorA ? colorA : colorB;
             for (int y = 0; y < canvasHeight; y++)
@@ -83,18 +75,17 @@ public class S05_MyMeshRenderer : MonoBehaviour
         }
     }
 
-    // 실습② — 체스판 무늬. 이번에는 반복문 뼈대만 주어집니다.
-    // 위에서 만든 줄무늬 조건을 x, y 둘 다에 적용하는 방식으로 직접 확장해보세요.
+    // 실습② — 체스판 무늬
     private void FillCheckerboard(int size, Color colorA, Color colorB)
     {
         for (int x = 0; x < canvasWidth; x++)
         {
             for (int y = 0; y < canvasHeight; y++)
             {
-                // TODO: 줄무늬는 x만 봤지만, 체스판은 x와 y를 함께 고려해야 합니다.
-                // 힌트: (x / size) + (y / size) 의 결과를 활용해보세요.
-
-                // 여기에 SetPixel 호출까지 직접 작성하세요.
+                // (x / size) + (y / size) 결과의 짝/홀수 여부로 구분
+                bool isColorA = ((x / size) + (y / size)) % 2 == 0;
+                Color checkerColor = isColorA ? colorA : colorB;
+                canvasTexture.SetPixel(x, y, checkerColor);
             }
         }
     }
