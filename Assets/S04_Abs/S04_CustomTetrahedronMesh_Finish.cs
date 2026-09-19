@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class S04_CustomTetrahedronMesh_Finish : MonoBehaviour
+public class S04_CustomTetrahedronMesh_Finish_Abs : MonoBehaviour
 {
     void Start()
     {
