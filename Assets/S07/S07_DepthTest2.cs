@@ -46,6 +46,7 @@ public class S07_DepthTest2 : MonoBehaviour
                 depthBuffer[x, y] = float.MaxValue;
 
         // TODO 0: 아래 세 줄의 순서를 원하는 대로 바꿔보세요.
+        // 깊이 테스트(Depth Test)가 정상적으로 구현되었다면 그리는 순서와 무관하게 올바른 결과가 출력됩니다.
         DrawTriangle(vertexA1, vertexB1, vertexC1, color1);
         DrawTriangle(vertexA2, vertexB2, vertexC2, color2);
         DrawTriangle(vertexA3, vertexB3, vertexC3, color3);
@@ -80,9 +81,14 @@ public class S07_DepthTest2 : MonoBehaviour
                 if (isInside)
                 {
                     // TODO 1: w1, w2, w3와 a.z, b.z, c.z를 이용해 보간된 z를 계산하세요.
-                    float interpolatedZ = 0f;
+                    float interpolatedZ = w1 * a.z + w2 * b.z + w3 * c.z;
 
                     // TODO 2: interpolatedZ가 depthBuffer[x, y]보다 작을 때만 갱신하세요.
+                    if (interpolatedZ < depthBuffer[x, y])
+                    {
+                        canvasTexture.SetPixel(x, y, color);
+                        depthBuffer[x, y] = interpolatedZ;
+                    }
                 }
             }
         }
