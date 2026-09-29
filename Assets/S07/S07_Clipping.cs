@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +10,7 @@ public class S07_Clipping : MonoBehaviour
     [SerializeField] private int clipMargin = 40;  // 캔버스 안쪽으로 이만큼 들어온 지점이 클리핑 경계
     [SerializeField]
     private List<Vector2> polygon = new List<Vector2> {
-        // 이미 3개의 꼭짓점이 왼쪽, 위쪽, 오른쪽 경계를 모두 벗어나도록 설계되어 있습니다.
-        new Vector2(10, 130), new Vector2(130, 250), new Vector2(246, 130)
+        new Vector2(10, 130), new Vector2(130, 240), new Vector2(200, 100)
     };
     [SerializeField] private Color fillColor = new Color(1f, 0.6f, 0.2f, 1f);
     [SerializeField] private Color marginOutlineColor = new Color(0.5f, 0.5f, 0.5f, 1f);
@@ -96,7 +95,6 @@ public class S07_Clipping : MonoBehaviour
         return output;
     }
 
-    // ── 완성: 오른쪽 경계(x <= boundary)로 자르는 함수 ──
     private List<Vector2> ClipRight(List<Vector2> input, float boundary)
     {
         List<Vector2> output = new List<Vector2>();
@@ -120,7 +118,6 @@ public class S07_Clipping : MonoBehaviour
         return output;
     }
 
-    // ── 완성: 아래쪽 경계(y >= boundary)로 자르는 함수 ──
     private List<Vector2> ClipBottom(List<Vector2> input, float boundary)
     {
         List<Vector2> output = new List<Vector2>();
@@ -144,7 +141,6 @@ public class S07_Clipping : MonoBehaviour
         return output;
     }
 
-    // ── 완성: 위쪽 경계(y <= boundary)로 자르는 함수 ──
     private List<Vector2> ClipTop(List<Vector2> input, float boundary)
     {
         List<Vector2> output = new List<Vector2>();
@@ -175,7 +171,6 @@ public class S07_Clipping : MonoBehaviour
         return new Vector2(boundaryX, p1.y + t * (p2.y - p1.y));
     }
 
-    // ── 완성: GetIntersectionX를 참고해서 y 기준 교차점을 구하는 함수 ──
     private Vector2 GetIntersectionY(Vector2 p1, Vector2 p2, float boundaryY)
     {
         float t = (boundaryY - p1.y) / (p2.y - p1.y);
