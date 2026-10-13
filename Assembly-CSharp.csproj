@@ -53,6 +53,7 @@
     <Compile Include="Assets\S07\S07_DepthTest1_Finish.cs" />
     <Compile Include="Assets\S04\S04_NormalVisualizer.cs" />
     <Compile Include="Assets\S10\S10_Matrix4x4_Finish.cs" />
+    <Compile Include="Assets\S10\MeasureTest.cs" />
     <Compile Include="Assets\S10\S10_DiamondChain_Finish.cs" />
     <Compile Include="Assets\S04_Abs\S04_CustomTetrahedronMesh_Finish.cs" />
     <Compile Include="Assets\S04\S04_CustomTetrahedronMesh_Finish.cs" />
