@@ -74,6 +74,7 @@
     <Compile Include="Assets\S04\S04_CustomCubeMesh.cs" />
     <Compile Include="Assets\S03\S03_SingleTriangleMesh_Finish.cs" />
     <Compile Include="Assets\S06\S06_RightTriangle_Finish.cs" />
+    <Compile Include="Assets\S12\S12_VirtualCamera_Finish.cs" />
     <Compile Include="Assets\S04_Abs\S04_CustomPyramidMesh.cs" />
     <Compile Include="Assets\S06\S06_SoftwareRasterizer_Finish.cs" />
     <Compile Include="Assets\S04\S04_CustomDiamondMesh.cs" />
