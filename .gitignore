@@ -373,3 +373,4 @@ FodyWeavers.xsd
 
 # Unity 메타 파일 추적 허용
 !*.meta
+/Recordings/
