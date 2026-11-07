@@ -10,6 +10,10 @@ public class Mid_LanternFloat : MonoBehaviour
     public float swingSpeed = 0.6f;
     public float breathAmount = 0.05f;
     public float breathSpeed = 1.5f;
+    public float riseSpeed = 0f;
+    public float riseHeight = 0f;
+    public float fadeDistance = 3f;
+    public float timeOffset = 0f;
     public Transform lanternLight;
     public Vector3 lightPoint = new Vector3(0f, 0.5f, 0f);
 
@@ -25,11 +29,19 @@ public class Mid_LanternFloat : MonoBehaviour
             baseVertices = mesh.vertices;
         }
 
-        float time = Time.time;
+        float time = Time.time + timeOffset;
 
-        Vector3 t = new Vector3(0f, Mathf.Sin(time * floatSpeed) * floatHeight, 0f);
+        float rise = 0f;
+        float fade = 1f;
+        if (riseHeight > 0f)
+        {
+            rise = Mathf.Repeat(time * riseSpeed, riseHeight);
+            fade = Mathf.Clamp01(rise / fadeDistance) * Mathf.Clamp01((riseHeight - rise) / fadeDistance);
+        }
+
+        Vector3 t = new Vector3(0f, Mathf.Sin(time * floatSpeed) * floatHeight + rise, 0f);
         Quaternion r = Quaternion.Euler(Mathf.Sin(time * swingSpeed) * swingAngle, time * spinSpeed, Mathf.Cos(time * swingSpeed) * swingAngle);
-        float scale = 1f + Mathf.Sin(time * breathSpeed) * breathAmount;
+        float scale = (1f + Mathf.Sin(time * breathSpeed) * breathAmount) * fade;
         Vector3 s = new Vector3(scale, scale, scale);
 
         Matrix4x4 M = Matrix4x4.TRS(t, r, s);
