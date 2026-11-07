@@ -68,6 +68,7 @@
     <Compile Include="Assets\S13\S13_CustomDiamondMesh.cs" />
     <Compile Include="Assets\S11\S11_VirtualCamera_Finish.cs" />
     <Compile Include="Assets\S08\DiamondMesh.cs" />
+    <Compile Include="Assets\Mid\Mid_LanternFloat.cs" />
     <Compile Include="Assets\S13\S13_CustomPyramidMesh.cs" />
     <Compile Include="Assets\S08\S08_DirectTransform.cs" />
     <Compile Include="Assets\S10\DiamondMesh_Rewinded.cs" />
