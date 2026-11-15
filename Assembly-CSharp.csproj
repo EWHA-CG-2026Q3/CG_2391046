@@ -96,6 +96,7 @@
     <None Include="Assets\S16\S16_MyCoal.shader" />
     <None Include="Assets\S16\S16_MyShader.shader" />
     <None Include="Assets\S06\S06_OpenGL_Shader.shader" />
+    <None Include="Assets\S17\S17_Texture.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
