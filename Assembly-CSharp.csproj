@@ -93,6 +93,7 @@
     <Compile Include="Assets\S07\S07_DepthTest2.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\S16\S16_MyShader.shader" />
     <None Include="Assets\S06\S06_OpenGL_Shader.shader" />
   </ItemGroup>
   <ItemGroup>
